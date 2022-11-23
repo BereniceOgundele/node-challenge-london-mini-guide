@@ -14,7 +14,20 @@ app.get("/", (req, res) => {
   });
 });
 
-app.get("/pharmacies", (req, res) => {
+app.get("/pharmacies",(req, res) => {
     res.json(harrow.pharmacies)
 })
-app.listen (port, ()=> console.log("server is listening"));
+
+app.get("/doctors",(req, res) => {
+    res.json(harrow.doctors)
+})
+
+app.get("/colleges",(req, res) => {
+    res.json(harrow.colleges)
+})
+
+app.get("/hospitals",(req, res) => {
+    res.json(harrow.hospitals)
+})
+
+app.listen (port, ()=> console.log(`server is listening to port ${port}`));
