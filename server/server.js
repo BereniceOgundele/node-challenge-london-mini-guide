@@ -18,16 +18,24 @@ app.get("/pharmacies",(req, res) => {
     res.json(harrow.pharmacies)
 })
 
-app.get("/doctors",(req, res) => {
-    res.json(harrow.doctors)
-})
-
 app.get("/colleges",(req, res) => {
     res.json(harrow.colleges)
+})
+
+app.get("/doctors",(req, res) => {
+    res.json(harrow.doctors)
 })
 
 app.get("/hospitals",(req, res) => {
     res.json(harrow.hospitals)
 })
+
+
+app.get('/harrow',(req,res)=>{
+    console.log('route /test')
+    var response=req.query;
+    console.log(harrow);
+    res.send(response);
+});
 
 app.listen (port, ()=> console.log(`server is listening to port ${port}`));
